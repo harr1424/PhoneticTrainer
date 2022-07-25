@@ -11,6 +11,8 @@
 		CE4256E8288DFB65002A9153 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4256E7288DFB65002A9153 /* ContentView.swift */; };
 		CE4256EA288DFB68002A9153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4256E9288DFB68002A9153 /* Assets.xcassets */; };
 		CE4256ED288DFB68002A9153 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4256EC288DFB68002A9153 /* Preview Assets.xcassets */; };
+		CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4256F3288DFBED002A9153 /* AlphabetModel.swift */; };
+		CE4256F6288E09CE002A9153 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4256F5288E09CE002A9153 /* SpeechRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		CE4256E7288DFB65002A9153 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE4256E9288DFB68002A9153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4256EC288DFB68002A9153 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE4256F3288DFBED002A9153 /* AlphabetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetModel.swift; sourceTree = "<group>"; };
+		CE4256F5288E09CE002A9153 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,10 @@
 		CE4256E4288DFB65002A9153 /* PhoneticTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				CE4256F5288E09CE002A9153 /* SpeechRecognizer.swift */,
 				CE4256E5288DFB65002A9153 /* PhoneticTrainerApp.swift */,
 				CE4256E7288DFB65002A9153 /* ContentView.swift */,
+				CE4256F3288DFBED002A9153 /* AlphabetModel.swift */,
 				CE4256E9288DFB68002A9153 /* Assets.xcassets */,
 				CE4256EB288DFB68002A9153 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4256E8288DFB65002A9153 /* ContentView.swift in Sources */,
+				CE4256F6288E09CE002A9153 /* SpeechRecognizer.swift in Sources */,
+				CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */,
 				CE4256E6288DFB65002A9153 /* PhoneticTrainerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +278,8 @@
 				DEVELOPMENT_TEAM = 2RH6V6Y4V2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access to your microphone is necessary to record your answer. Your audio is never made available to the developer. ";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to determine if your answer is correct. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +309,8 @@
 				DEVELOPMENT_TEAM = 2RH6V6Y4V2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access to your microphone is necessary to record your answer. Your audio is never made available to the developer. ";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to determine if your answer is correct. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
