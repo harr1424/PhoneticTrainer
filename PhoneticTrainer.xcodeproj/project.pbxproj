@@ -278,8 +278,6 @@
 				DEVELOPMENT_TEAM = 2RH6V6Y4V2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access to your microphone is necessary to record your answer. Your audio is never made available to the developer. ";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to determine if your answer is correct. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,8 +307,6 @@
 				DEVELOPMENT_TEAM = 2RH6V6Y4V2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Access to your microphone is necessary to record your answer. Your audio is never made available to the developer. ";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to determine if your answer is correct. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

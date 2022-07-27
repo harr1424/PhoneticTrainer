@@ -23,7 +23,7 @@ struct ContentView: View {
     @State private var lettersUsed = [String]()
     @State private var endingTitle = ""
     @State private var endingBody = ""
-    @State private var showENdingMessage = false
+    @State private var showEndingMessage = false
     
     func startGame() {
         if let wordListURL = Bundle.main.url(forResource: "sorted_words", withExtension: "txt") {
@@ -89,6 +89,7 @@ struct ContentView: View {
         }
         
         showingScore = true
+        checkGameEnd()
     }
     
     func nextQuestion() {
@@ -108,10 +109,10 @@ struct ContentView: View {
     }
     
     func checkGameEnd() {
-        if numQuestion >= 26 {
+        if numQuestion >= 25 {
             endingTitle = "Game Over!"
-            endingBody = "You scored \(score / 26)% accuracy."
-            showENdingMessage = true
+            endingBody = "You scored \((score / 26) * 100)% accuracy."
+            showEndingMessage = true
         }
     }
     
@@ -129,7 +130,7 @@ struct ContentView: View {
         lettersUsed = [String]()
         endingTitle = ""
         endingBody = ""
-        showENdingMessage = false
+        showEndingMessage = false
         
         chooseMode()
     }
@@ -157,7 +158,6 @@ struct ContentView: View {
                             List(getWords(), id: \.self) { word in
                                 Button {
                                     wordChoice(word: word)
-                                    checkGameEnd()
                                 } label: {
                                     Text(word)
                                         .foregroundStyle(.secondary)
@@ -181,7 +181,7 @@ struct ContentView: View {
             .alert(scoreTitle, isPresented: $showingScore) {
                 Button("Continue", action: nextQuestion)
             }
-            .alert(endingTitle, isPresented: $showENdingMessage) {
+            .alert(endingTitle, isPresented: $showEndingMessage) {
                 Button("Play Again", action: resetGame)
             } message: {
                 Text(endingBody)
