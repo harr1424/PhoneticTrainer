@@ -12,7 +12,7 @@
 		CE4256EA288DFB68002A9153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4256E9288DFB68002A9153 /* Assets.xcassets */; };
 		CE4256ED288DFB68002A9153 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4256EC288DFB68002A9153 /* Preview Assets.xcassets */; };
 		CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4256F3288DFBED002A9153 /* AlphabetModel.swift */; };
-		CE4256F6288E09CE002A9153 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4256F5288E09CE002A9153 /* SpeechRecognizer.swift */; };
+		CE92AFF92890B32B00A26A09 /* sorted_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE92AFF82890B32B00A26A09 /* sorted_words.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		CE4256E9288DFB68002A9153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4256EC288DFB68002A9153 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE4256F3288DFBED002A9153 /* AlphabetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetModel.swift; sourceTree = "<group>"; };
-		CE4256F5288E09CE002A9153 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		CE92AFF82890B32B00A26A09 /* sorted_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sorted_words.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 		CE4256E4288DFB65002A9153 /* PhoneticTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				CE4256F5288E09CE002A9153 /* SpeechRecognizer.swift */,
 				CE4256E5288DFB65002A9153 /* PhoneticTrainerApp.swift */,
 				CE4256E7288DFB65002A9153 /* ContentView.swift */,
 				CE4256F3288DFBED002A9153 /* AlphabetModel.swift */,
 				CE4256E9288DFB68002A9153 /* Assets.xcassets */,
+				CE92AFF82890B32B00A26A09 /* sorted_words.txt */,
 				CE4256EB288DFB68002A9153 /* Preview Content */,
 			);
 			path = PhoneticTrainer;
@@ -133,6 +133,7 @@
 			files = (
 				CE4256ED288DFB68002A9153 /* Preview Assets.xcassets in Resources */,
 				CE4256EA288DFB68002A9153 /* Assets.xcassets in Resources */,
+				CE92AFF92890B32B00A26A09 /* sorted_words.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4256E8288DFB65002A9153 /* ContentView.swift in Sources */,
-				CE4256F6288E09CE002A9153 /* SpeechRecognizer.swift in Sources */,
 				CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */,
 				CE4256E6288DFB65002A9153 /* PhoneticTrainerApp.swift in Sources */,
 			);
