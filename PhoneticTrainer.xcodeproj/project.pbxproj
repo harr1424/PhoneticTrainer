@@ -17,6 +17,7 @@
 		CED7232B28936B180065C0E3 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = CED7232A28936B180065C0E3 /* Collections */; };
 		CED7232D28936B180065C0E3 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = CED7232C28936B180065C0E3 /* DequeModule */; };
 		CED7232F28936B180065C0E3 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = CED7232E28936B180065C0E3 /* OrderedCollections */; };
+		CED723312893764E0065C0E3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED723302893764E0065C0E3 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CE4256F3288DFBED002A9153 /* AlphabetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetModel.swift; sourceTree = "<group>"; };
 		CE92AFF82890B32B00A26A09 /* sorted_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sorted_words.txt; sourceTree = "<group>"; };
 		CED72327289368AE0065C0E3 /* ReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
+		CED723302893764E0065C0E3 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		CE4256E4288DFB65002A9153 /* PhoneticTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				CED723302893764E0065C0E3 /* ButtonView.swift */,
 				CED72327289368AE0065C0E3 /* ReferenceView.swift */,
 				CE4256E5288DFB65002A9153 /* PhoneticTrainerApp.swift */,
 				CE4256E7288DFB65002A9153 /* ContentView.swift */,
@@ -163,6 +166,7 @@
 			files = (
 				CED72328289368AE0065C0E3 /* ReferenceView.swift in Sources */,
 				CE4256E8288DFB65002A9153 /* ContentView.swift in Sources */,
+				CED723312893764E0065C0E3 /* ButtonView.swift in Sources */,
 				CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */,
 				CE4256E6288DFB65002A9153 /* PhoneticTrainerApp.swift in Sources */,
 			);

@@ -1392,7 +1392,6 @@ Changed
 Colorado
 Connect
 Correct
-Charles
 Certificate
 Coverage
 Clients
@@ -4323,7 +4322,6 @@ Graphite
 Germans
 Grilled
 Garfield
-Georges
 Glassware
 Grinding
 Garments
@@ -7719,7 +7717,6 @@ Regardless
 Restricted
 Republican
 Regularly
-Roberts
 Revenues
 Reserves
 Reproduction
@@ -10137,7 +10134,6 @@ Workers
 Watches
 Websites
 Weekend
-Williams
 Wholesale
 Workshop
 Warranty

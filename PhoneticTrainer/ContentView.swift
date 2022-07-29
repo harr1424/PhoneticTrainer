@@ -193,9 +193,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     NavigationLink(destination: ReferenceView(mode: mode)) {
-                        Text("View Phonetic Alphabet")
-                            .font(.title)
-                            .foregroundColor(.white)
+                        ButtonView(text: "View \(mode) Alphabet")
                     }
                 }
             }

@@ -16,13 +16,17 @@ struct ReferenceView: View {
                 Text(word)
                     .font(.title)
             }
+            .navigationTitle("NATO Alphabet")
         } else {
             List(LAPD.values, id: \.self) { word in
                 Text(word)
                     .font(.title)
             }
+            .navigationTitle("LAPD Alphabet")
         }
     }
 }
+
+
 
 
