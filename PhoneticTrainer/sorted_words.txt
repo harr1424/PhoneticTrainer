@@ -1632,7 +1632,6 @@ Correction
 Communicate
 Continental
 Chapters
-Charlie
 Convenient
 Childhood
 Choosing
@@ -4622,7 +4621,6 @@ Honorary
 Hubbard
 Harvesting
 Hypnosis
-Hoteles
 Hickory
 Higgins
 Halfway
@@ -4748,7 +4746,6 @@ Intended
 Interactive
 Identify
 Institutions
-Indiana
 Identified
 Integration
 Interview
@@ -5398,7 +5395,6 @@ Learned
 Lessons
 Lifestyle
 Laptops
-Lincoln
 Listening
 Landscape
 Licensing
@@ -9807,7 +9803,6 @@ Unfortunately
 Underground
 Undergraduate
 Ukraine
-Uniform
 Unusual
 Understood
 Underlying
@@ -9839,7 +9834,6 @@ Unofficial
 Underwater
 Upgraded
 Useless
-Uniforms
 Unstable
 Unsecured
 Utilizing
@@ -10138,7 +10132,6 @@ Western
 Wednesday
 Worldwide
 Wedding
-William
 Warning
 Workers
 Watches
@@ -10314,7 +10307,6 @@ Withholding
 Washers
 Wonderland
 Whisper
-Whiskey
 Waterfall
 Walters
 Washable
@@ -10375,12 +10367,14 @@ Xenical
 Xavier
 Xylophone
 Xenophobe
+Xylitol
+Xiphoid
+Xylotomy
 Yourself
 Yesterday
 Younger
 Yorkshire
 Yugoslavia
-Yankees
 Youngest
 Yellowstone
 Yourselves

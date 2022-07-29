@@ -13,6 +13,10 @@
 		CE4256ED288DFB68002A9153 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4256EC288DFB68002A9153 /* Preview Assets.xcassets */; };
 		CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4256F3288DFBED002A9153 /* AlphabetModel.swift */; };
 		CE92AFF92890B32B00A26A09 /* sorted_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE92AFF82890B32B00A26A09 /* sorted_words.txt */; };
+		CED72328289368AE0065C0E3 /* ReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED72327289368AE0065C0E3 /* ReferenceView.swift */; };
+		CED7232B28936B180065C0E3 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = CED7232A28936B180065C0E3 /* Collections */; };
+		CED7232D28936B180065C0E3 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = CED7232C28936B180065C0E3 /* DequeModule */; };
+		CED7232F28936B180065C0E3 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = CED7232E28936B180065C0E3 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,7 @@
 		CE4256EC288DFB68002A9153 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE4256F3288DFBED002A9153 /* AlphabetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetModel.swift; sourceTree = "<group>"; };
 		CE92AFF82890B32B00A26A09 /* sorted_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sorted_words.txt; sourceTree = "<group>"; };
+		CED72327289368AE0065C0E3 /* ReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED7232B28936B180065C0E3 /* Collections in Frameworks */,
+				CED7232D28936B180065C0E3 /* DequeModule in Frameworks */,
+				CED7232F28936B180065C0E3 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +63,7 @@
 		CE4256E4288DFB65002A9153 /* PhoneticTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				CED72327289368AE0065C0E3 /* ReferenceView.swift */,
 				CE4256E5288DFB65002A9153 /* PhoneticTrainerApp.swift */,
 				CE4256E7288DFB65002A9153 /* ContentView.swift */,
 				CE4256F3288DFBED002A9153 /* AlphabetModel.swift */,
@@ -89,6 +98,11 @@
 			dependencies = (
 			);
 			name = PhoneticTrainer;
+			packageProductDependencies = (
+				CED7232A28936B180065C0E3 /* Collections */,
+				CED7232C28936B180065C0E3 /* DequeModule */,
+				CED7232E28936B180065C0E3 /* OrderedCollections */,
+			);
 			productName = PhoneticTrainer;
 			productReference = CE4256E2288DFB65002A9153 /* PhoneticTrainer.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +131,9 @@
 				Base,
 			);
 			mainGroup = CE4256D9288DFB65002A9153;
+			packageReferences = (
+				CED7232928936B180065C0E3 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = CE4256E3288DFB65002A9153 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED72328289368AE0065C0E3 /* ReferenceView.swift in Sources */,
 				CE4256E8288DFB65002A9153 /* ContentView.swift in Sources */,
 				CE4256F4288DFBED002A9153 /* AlphabetModel.swift in Sources */,
 				CE4256E6288DFB65002A9153 /* PhoneticTrainerApp.swift in Sources */,
@@ -347,6 +365,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CED7232928936B180065C0E3 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CED7232A28936B180065C0E3 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED7232928936B180065C0E3 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		CED7232C28936B180065C0E3 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED7232928936B180065C0E3 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		CED7232E28936B180065C0E3 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED7232928936B180065C0E3 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE4256DA288DFB65002A9153 /* Project object */;
 }

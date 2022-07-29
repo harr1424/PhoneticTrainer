@@ -5,7 +5,8 @@
 //  Created by user on 7/24/22.
 //
 
-import Foundation
+import Collections
+import SwiftUI
 
 let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
@@ -13,7 +14,7 @@ var allWords = [String]()
 
 var targetWords = [String]()
 
-let LAPD = ["A" : "Adam",
+let LAPD: OrderedDictionary = ["A" : "Adam",
             "B" : "Boy",
             "C" : "Charles",
             "D" : "David",
@@ -41,7 +42,7 @@ let LAPD = ["A" : "Adam",
             "Z" : "Zebra"
 ]
 
-let NATO = ["A" : "Alpha",
+let NATO: OrderedDictionary = ["A" : "Alpha",
             "B" : "Bravo",
             "C" : "Charlie",
             "D" : "Delta",

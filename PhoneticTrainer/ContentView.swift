@@ -22,8 +22,8 @@ struct ContentView: View {
     // Store an array of alphabet characters that have not yet been shown to the user
     @State private var availableLetters = alphabet
     @State private var lettersRemaining = 26
-
-
+    
+    
     @State private var score = 0
     @State private var correctAnswer = false
     
@@ -36,6 +36,8 @@ struct ContentView: View {
     /* Called in .onAppear(), loads a wordlist from the app bundle and sets targetWords to contain
      all words beginning with the current randomly chosen character. */
     func startGame() {
+        chooseMode()
+
         if let wordListURL = Bundle.main.url(forResource: "sorted_words", withExtension: "txt") {
             if let sortedWords = try? String(contentsOf: wordListURL) {
                 allWords = sortedWords.components(separatedBy: "\n")
@@ -47,7 +49,7 @@ struct ContentView: View {
         fatalError("Word list could not be loaded")
     }
     
-    /* Called in .onAppear() and resetGame(), displays a message to the user containing information
+    /* Called in startGame() and resetGame(), displays a message to the user containing information
      about the different phonetic alphabets and prompts them to select one. */
     func chooseMode() {
         messageTitle = "Select phonetic alphabet"
@@ -79,10 +81,8 @@ struct ContentView: View {
         if mode == "LAPD" {
             shownWords.append(LAPD[currLetter]!)
         }
-        
-        let uniqueWords = Array(Set(shownWords))
-        
-        return uniqueWords.shuffled()
+                
+        return shownWords.shuffled()
     }
     
     /* Called each time a user selects a word, evaluates the chosen word for correctness, updates the
@@ -120,7 +120,7 @@ struct ContentView: View {
         correctAnswer = false
         
         availableLetters.removeAll(where : {$0 == currLetter})
-                
+        
         guard lettersRemaining > 0 else {
             endGame()
             
@@ -138,7 +138,7 @@ struct ContentView: View {
         showEndingMessage = true
     }
     
-    // Reset the game state to original condition 
+    // Reset the game state to original condition
     func resetGame() {
         currLetter = alphabet[Int.random(in: 0..<26)]
         showMessage = false
@@ -192,6 +192,11 @@ struct ContentView: View {
                         }
                         Spacer()
                     }
+                    NavigationLink(destination: ReferenceView(mode: mode)) {
+                        Text("View Phonetic Alphabet")
+                            .font(.title)
+                            .foregroundColor(.white)
+                    }
                 }
             }
             .alert(messageTitle, isPresented: $showMessage) {
@@ -219,8 +224,9 @@ struct ContentView: View {
                 }
             }
             .onAppear {
-                chooseMode()
-                startGame()
+                if mode == "" {
+                    startGame()
+                }
             }
         }
     }
