@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct ContentView: View {
+    // Get current color scheme of device
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     // Get a random alphabet character
     @State private var currLetter = alphabet[Int.random(in: 0..<26)]
@@ -37,7 +39,7 @@ struct ContentView: View {
      all words beginning with the current randomly chosen character. */
     func startGame() {
         chooseMode()
-
+        
         if let wordListURL = Bundle.main.url(forResource: "sorted_words", withExtension: "txt") {
             if let sortedWords = try? String(contentsOf: wordListURL) {
                 allWords = sortedWords.components(separatedBy: "\n")
@@ -81,7 +83,7 @@ struct ContentView: View {
         if mode == "LAPD" {
             shownWords.append(LAPD[currLetter]!)
         }
-                
+        
         return shownWords.shuffled()
     }
     
@@ -158,74 +160,149 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                LinearGradient(gradient: Gradient(stops: [
-                    .init(color: .red, location: 0.35),
-                    .init(color: .white, location: 0.4),
-                    .init(color: .blue, location: 0.6)
-                ]), startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-                
-                VStack {
-                    Text(currLetter)
-                        .font(.system(size: 140).weight(.bold))
-                        .foregroundColor(.white)
-                        .animation(.easeIn)
-                    Spacer()
+            if colorScheme == .light {
+                ZStack {
+                    LinearGradient(gradient: Gradient(stops: [
+                        .init(color: .red, location: 0.35),
+                        .init(color: .white, location: 0.4),
+                        .init(color: .blue, location: 0.6)
+                    ]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
                     
-                    if mode != "" {
-                        // display list of words
-                        VStack {
-                            List(getWords(), id: \.self) { word in
-                                Button {
-                                    wordChoice(word: word)
-                                } label: {
-                                    Text(word)
-                                        .foregroundStyle(.secondary)
-                                        .font(.title)
-                                }
-                            }
-                            .listRowInsets(EdgeInsets()) // << to zero padding
-                            .background(.regularMaterial)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    VStack {
+                        Text(currLetter)
+                            .font(.system(size: 140).weight(.bold))
+                            .foregroundColor(.white)
                             .animation(.easeIn)
-                        }
                         Spacer()
-                    }
-                    NavigationLink(destination: ReferenceView(mode: mode)) {
-                        ButtonView(text: "View \(mode) Alphabet")
+                        
+                        if mode != "" {
+                            // display list of words
+                            VStack {
+                                List(getWords(), id: \.self) { word in
+                                    Button {
+                                        wordChoice(word: word)
+                                    } label: {
+                                        Text(word)
+                                            .foregroundStyle(.secondary)
+                                            .font(.title)
+                                    }
+                                }
+                                .listRowInsets(EdgeInsets()) // << to zero padding
+                                .background(.regularMaterial)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .animation(.easeIn)
+                            }
+                            Spacer()
+                        }
+                        NavigationLink(destination: ReferenceView(mode: mode)) {
+                            Text("View \(mode) Alphabet")
+                                .font(.title)
+                                .foregroundColor(.white)
+                        }
                     }
                 }
-            }
-            .alert(messageTitle, isPresented: $showMessage) {
-                Button("NATO", action: setNATO)
-                Button("LAPD", action: setLAPD)
-            } message: {
-                Text(messageBody)
-            }
-            .alert(endingTitle, isPresented: $showEndingMessage) {
-                Button("Play Again", action: resetGame)
-            } message: {
-                Text(endingBody)
-            }
-            .toolbar {
-                ToolbarItem() {
-                    Text(mode)
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
+                .alert(messageTitle, isPresented: $showMessage) {
+                    Button("NATO", action: setNATO)
+                    Button("LAPD", action: setLAPD)
+                } message: {
+                    Text(messageBody)
+                }
+                .alert(endingTitle, isPresented: $showEndingMessage) {
+                    Button("Play Again", action: resetGame)
+                } message: {
+                    Text(endingBody)
+                }
+                .toolbar {
+                    ToolbarItem() {
+                        Text(mode)
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                        
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("Score: \(score)")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                    }
+                }
+                .onAppear {
+                    if mode == "" {
+                        startGame()
+                    }
+                }
+            } else { // color scheme is dark
+                ZStack {
+                    LinearGradient(gradient: Gradient(stops: [
+                        .init(color: .gray, location: 0.1),
+                        .init(color: .black, location: 0.3)
+                    ]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
                     
+                    VStack {
+                        Text(currLetter)
+                            .font(.system(size: 140).weight(.bold))
+                            .foregroundColor(.blue)
+                            .animation(.easeIn)
+                        Spacer()
+                        
+                        if mode != "" {
+                            // display list of words
+                            VStack {
+                                List(getWords(), id: \.self) { word in
+                                    Button {
+                                        wordChoice(word: word)
+                                    } label: {
+                                        Text(word)
+                                            .foregroundStyle(.secondary)
+                                            .font(.title)
+                                    }
+                                }
+                                .listRowInsets(EdgeInsets()) // << to zero padding
+                                .background(.regularMaterial)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .animation(.easeIn)
+                            }
+                            Spacer()
+                        }
+                        NavigationLink(destination: ReferenceView(mode: mode)) {
+                            Text("View \(mode) Alphabet")
+                                .font(.title)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Score: \(score)")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
+                .alert(messageTitle, isPresented: $showMessage) {
+                    Button("NATO", action: setNATO)
+                    Button("LAPD", action: setLAPD)
+                } message: {
+                    Text(messageBody)
+                }
+                .alert(endingTitle, isPresented: $showEndingMessage) {
+                    Button("Play Again", action: resetGame)
+                } message: {
+                    Text(endingBody)
+                }
+                .toolbar {
+                    ToolbarItem() {
+                        Text(mode)
+                            .font(.largeTitle)
+                            .foregroundColor(.secondary)
+                        
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("Score: \(score)")
+                            .font(.largeTitle)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .onAppear {
+                    if mode == "" {
+                        startGame()
+                    }
                 }
             }
-            .onAppear {
-                if mode == "" {
-                    startGame()
-                }
-            }
+            
         }
     }
 }

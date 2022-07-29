@@ -8,25 +8,45 @@
 import SwiftUI
 
 struct ReferenceView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State var mode: String
     
     var body: some View {
-        if mode == "NATO" {
-            List(NATO.values, id: \.self) { word in
-                Text(word)
-                    .font(.title)
+        if colorScheme == .light {
+            if mode == "NATO" {
+                List(NATO.values, id: \.self) { word in
+                    Text(word)
+                        .font(.title)
+                }
+                .navigationTitle("NATO Alphabet")
+            } else {
+                List(LAPD.values, id: \.self) { word in
+                    Text(word)
+                        .font(.title)
+                }
+                .navigationTitle("LAPD Alphabet")
             }
-            .navigationTitle("NATO Alphabet")
+            
         } else {
-            List(LAPD.values, id: \.self) { word in
-                Text(word)
-                    .font(.title)
+            if mode == "NATO" {
+                List(NATO.values, id: \.self) { word in
+                    Text(word)
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                }
+                .navigationTitle("NATO Alphabet")
+            } else {
+                List(LAPD.values, id: \.self) { word in
+                    Text(word)
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                }
+                .navigationTitle("LAPD Alphabet")
             }
-            .navigationTitle("LAPD Alphabet")
         }
     }
 }
-
-
-
-
+    
+    
+    
+    
