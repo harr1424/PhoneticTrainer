@@ -25,14 +25,13 @@ struct ContentView: View {
     @State private var availableLetters = alphabet
     @State private var lettersRemaining = 26
     
-    
-    @State private var score = 0
-    @State private var correctAnswer = false
-    
     // Display an ending message to the user showing score and prompting them to play again
     @State private var endingTitle = ""
     @State private var endingBody = ""
     @State private var showEndingMessage = false
+    
+    // Track user score for each session
+    @State private var score = 0
     
     
     /* Called in .onAppear(), loads a wordlist from the app bundle and sets targetWords to contain
@@ -40,7 +39,7 @@ struct ContentView: View {
     func startGame() {
         chooseMode()
         
-        if let wordListURL = Bundle.main.url(forResource: "sorted_words", withExtension: "txt") {
+        if let wordListURL = Bundle.main.url(forResource: "wordlist", withExtension: "txt") {
             if let sortedWords = try? String(contentsOf: wordListURL) {
                 allWords = sortedWords.components(separatedBy: "\n")
                 targetWords = allWords.filter { $0.starts(with: currLetter) }
@@ -93,10 +92,8 @@ struct ContentView: View {
         if mode == "NATO" {
             if word == NATO[currLetter] {
                 score += 1
-                correctAnswer = true
             } else {
                 withAnimation {
-                    correctAnswer = false
                 }
             }
         }
@@ -104,10 +101,8 @@ struct ContentView: View {
         if mode == "LAPD" {
             if word == LAPD[currLetter] {
                 score += 1
-                correctAnswer = true
             } else {
                 withAnimation {
-                    correctAnswer = false
                 }
             }
         }
@@ -119,7 +114,6 @@ struct ContentView: View {
      If all alphabet characters have been used, endGame() is called. */
     func nextQuestion() {
         lettersRemaining -= 1
-        correctAnswer = false
         
         availableLetters.removeAll(where : {$0 == currLetter})
         
@@ -130,7 +124,7 @@ struct ContentView: View {
         }
         currLetter = availableLetters[Int.random(in: 0..<lettersRemaining)]
         
-        targetWords = getWords()
+        //targetWords = getWords()
     }
     
     // Displays ending message to user and prompts them to play again
@@ -150,7 +144,6 @@ struct ContentView: View {
         mode = ""
         lettersRemaining = 26
         availableLetters = alphabet
-        correctAnswer = false
         endingTitle = ""
         endingBody = ""
         showEndingMessage = false
@@ -188,7 +181,7 @@ struct ContentView: View {
                                             .font(.title)
                                     }
                                 }
-                                .listRowInsets(EdgeInsets()) // << to zero padding
+                                .listRowInsets(EdgeInsets())
                                 .background(.regularMaterial)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                                 .animation(.easeIn)
