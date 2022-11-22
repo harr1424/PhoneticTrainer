@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import StoreKit
 
 
 struct ContentView: View {
     // Get current color scheme of device
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
+    // Prompt user for review
+    @Environment(\.requestReview) private var requestReview
+
     
     // Get a random alphabet character
     @State private var currLetter = alphabet[Int.random(in: 0..<26)]
@@ -149,6 +154,10 @@ struct ContentView: View {
         showEndingMessage = false
         
         chooseMode()
+        
+        DispatchQueue.main.async {
+            requestReview()
+        }
     }
     
     var body: some View {
