@@ -1,5 +1,10 @@
 # PhoneticTrainer
 A quiz based app designed to teach users two of the most popular phonetic alphabets for the English language. 
 
-![Simulator Screen Shot - iPhone 14 Pro - 2022-11-21 at 20 31 13](https://user-images.githubusercontent.com/84741727/203214658-809aa50a-0e5b-4c1b-91dd-1420e6efdf57.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2022-11-21 at 20 31 43](https://user-images.githubusercontent.com/84741727/203214666-190c6008-30fc-457e-b0eb-6948e87af043.png)
+<p align="center">
+      <img width="400" src="https://github.com/harr1424/PhoneticTrainer/blob/main/images/day.png" alt="App screnshot with light color theme">
+       <spacer type="horizontal" width="100"></spacer>
+    <img width="400" src="https://github.com/harr1424/PhoneticTrainer/blob/main/images/night.png" alt="=App screenshot with dark color theme">
+
+
+</p>
