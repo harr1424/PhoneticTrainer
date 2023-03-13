@@ -9,6 +9,9 @@ A quiz based iOS app designed to teach users two of the most popular phonetic al
 
 </p>
 
+## Privacy Policy 
+This app does not colect, store, or share any of your personal information. 
+
 
 <br><br>
 
